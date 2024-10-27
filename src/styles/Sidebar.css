@@ -1,0 +1,28 @@
+.sidebar {
+  background-color: #2a3f54;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+}
+
+.sidebar h2 {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 1.1em;
+}
+
+.sidebar li svg {
+  margin-right: 10px; /* 아이콘과 텍스트 사이 여백 */
+  font-size: 1.5em;
+}
