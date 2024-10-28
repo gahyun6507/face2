@@ -1,0 +1,53 @@
+/* Webcam.css */
+
+/* 웹캠 컨테이너 스타일 */
+.webcam-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 컨텐츠 중앙 정렬 */
+  }
+  
+  .webcam-container h3 {
+    margin-bottom: 10px;
+    color: #225ba4;
+    font-weight: 600;
+  }
+  
+  /* 웹캠 박스 스타일 */
+  .webcam-box {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    width: 100%;
+    max-width: 320px; /* 최대 너비 설정 */
+  }
+  
+  /* 버튼 스타일 */
+  .webcam-toggle-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #225ba4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .webcam-toggle-button:hover {
+    background-color: #1a4b87;
+  }
+  
+  /* 웹캠이 켜졌을 때 버튼 위치 아래로 */
+  .webcam-toggle-button.below {
+    margin-top: 20px; /* 웹캠 박스 아래로 위치 이동 */
+  }
