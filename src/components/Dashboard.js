@@ -3,7 +3,6 @@ import React from 'react';
 import SystemLogChart from './SystemLogChart';
 import Calendar from './Calendar';
 import DataTable from './DataTable';
-import WebcamComponent from './Webcam'; // 웹캠 컴포넌트 추가
 import '../styles/Dashboard.css';
 import { FaUserCheck, FaUserTimes, FaClock, FaCheckCircle } from 'react-icons/fa';
 
@@ -44,7 +43,6 @@ function Dashboard() {
         <SystemLogChart />
         <Calendar />
       </div>
-      <WebcamComponent /> {/* 웹캠 컴포넌트 추가 */}
       <DataTable />
     </div>
   );
