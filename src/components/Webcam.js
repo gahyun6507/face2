@@ -1,15 +1,16 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
 import '../styles/Webcam.css';
 
 const WebcamComponent = () => {
   const webcamRef = useRef(null);
-  const [isWebcamOn, setIsWebcamOn] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("");
+  
+  // Updated video constraints to 1280x720
   const videoConstraints = {
-    width: 320,
-    height: 240,
+    width: 1280,
+    height: 720,
     facingMode: "user"
   };
 
@@ -45,46 +46,32 @@ const WebcamComponent = () => {
     }
   };
 
-  const handleWebcamToggle = () => {
-    setIsWebcamOn(true);
-  };
-
-  useEffect(() => {
-    let timer;
-    if (isWebcamOn) {
-      timer = setTimeout(() => {
-        handleCapture(); // 5초 후 이미지 캡처
-        setIsWebcamOn(false);
-      }, 5000); // 5초 후 웹캠 끄기
-    }
-    return () => clearTimeout(timer);
-  }, [isWebcamOn]);
-
   return (
     <div className="webcam-container">
       <h3>출석 체크</h3>
       
-      {isWebcamOn && (
-        <div className="webcam-box">
-          <Webcam 
-            audio={false}
-            height={240}
-            width={320}
-            ref={webcamRef}
-            videoConstraints={videoConstraints}
-            screenshotFormat="image/jpeg"
-          />
-        </div>
-      )}
+      {/* Webcam Component */}
+      <div className="webcam-box">
+        <Webcam 
+          audio={false}
+          height={720}         // Updated height
+          width={1280}         // Updated width
+          ref={webcamRef}
+          videoConstraints={videoConstraints}
+          screenshotFormat="image/jpeg"
+        />
+      </div>
 
+      {/* Capture and Check Attendance Button */}
       <button 
-        className={`webcam-toggle-button ${isWebcamOn ? "below" : ""}`} 
-        onClick={handleWebcamToggle}
+        className="webcam-toggle-button" 
+        onClick={handleCapture}
       >
-        웹캠 켜기
+        출석 체크
       </button>
 
-      {uploadStatus && <p>{uploadStatus}</p>} {/* 상태 메시지 표시 */}
+      {/* Display upload status */}
+      {uploadStatus && <p>{uploadStatus}</p>}
     </div>
   );
 };
