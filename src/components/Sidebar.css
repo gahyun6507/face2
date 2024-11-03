@@ -1,0 +1,86 @@
+.sidebar {
+  background: linear-gradient(to bottom, #2a3f54, #1c2834); /* 그라디언트 배경 */
+  color: #ffffff;
+  padding: 30px; /* 패딩 증가 */
+  width: 220px; /* 사이드바 폭 증가 */
+  height: 100vh; /* 전체 높이 사용 */
+  display: flex;
+  flex-direction: column; /* 세로 방향 정렬 */
+  position: fixed; /* 고정 위치 */
+  overflow-y: auto; /* 세로 방향 스크롤 가능 */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* 사이드바 그림자 추가 */
+}
+
+.sidebar h2 {
+  margin-bottom: 20px; /* 제목과 리스트 사이 여백 */
+  padding: 10px 0; /* 패딩 추가하여 다른 항목과 정렬 */
+}
+
+.sidebar ul {
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  flex-grow: 1; /* 남은 공간을 차지하게 설정 */
+}
+
+.sidebar li {
+  margin-bottom: 10px; /* 리스트 항목 사이의 여백 */
+}
+
+.sidebar ul li a {
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+  color: #ffffff; /* 기본 링크 색상 */
+  display: flex; /* 아이콘과 텍스트를 플렉스 컨테이너로 설정 */
+  align-items: center; /* 아이콘과 텍스트 정렬 */
+  padding: 10px 15px; /* 링크 내부 패딩 */
+  transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+  border-radius: 5px; /* 모서리 둥글게 처리 */
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* hover 시 배경색 투명도 추가 */
+  color: #f1c40f; /* hover 시 링크 색상 */
+}
+
+.sidebar ul li a.active {
+  font-weight: bold; /* 활성화된 링크 두께 증가 */
+  color: #f1c40f; /* 활성화된 링크 색상 */
+}
+
+.sidebar li svg {
+  margin-right: 10px; /* 아이콘과 텍스트 사이 여백 */
+  font-size: 1.8em; /* 아이콘 크기 증가 */
+}
+
+/* SnapCheck 제목 스타일 */
+.snapcheck-title {
+  text-decoration: none; /* 밑줄 제거 */
+  color: #ffffff; /* 텍스트 색상 */
+  font-size: 1.5em; /* 제목 크기를 1.5em으로 변경 */
+  text-align: center; /* 제목 중앙 정렬 */
+  transition: color 0.3s; /* 색상 변화에 부드러운 전환 효과 추가 */
+}
+
+.snapcheck-title:hover {
+  color: #f1c40f; /* hover 시 색상 변경 */
+}
+
+/* 미디어 쿼리로 작은 화면에서 스타일 조정 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* 작은 화면에서 전체 폭 사용 */
+    position: relative; /* 상대적 위치로 변경 */
+    height: auto; /* 높이 자동 조정 */
+  }
+
+  .sidebar h2 {
+    font-size: 1.8em; /* 작은 화면에서 제목 크기 감소 */
+  }
+
+  .sidebar ul li {
+    margin-bottom: 5px; /* 작은 화면에서 리스트 항목 간 여백 감소 */
+  }
+
+  .sidebar ul li a {
+    padding: 8px 10px; /* 작은 화면에서 내부 패딩 감소 */
+  }
+}

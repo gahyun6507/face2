@@ -1,17 +1,64 @@
 import React from 'react';
 import { MdDashboard, MdPerson, MdSettings, MdLogout } from 'react-icons/md';
-import '../styles/Sidebar.css';
+import { NavLink } from 'react-router-dom';
+import './Sidebar.css';
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>SnapCheck</h2>
+      <NavLink 
+        to="/" 
+        className="snapcheck-title"
+        aria-label="SnapCheck"
+      >
+        <h2>SnapCheck</h2>
+      </NavLink>
       <ul>
-        <li><MdDashboard /> 대시보드</li>
-        <li><MdPerson /> 출결통계</li>
-        <li><MdSettings /> 캘린더</li>
-        <li><MdLogout /> 출결기록</li>
-        <li><MdPerson /> 출석체크</li> {/* New attendance check item */}
+        <li>
+          <NavLink 
+            to="/dashboard" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-label="대시보드"
+          >
+            <MdDashboard /> 대시보드
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/calendar" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-label="캘린더"
+          >
+            <MdPerson /> 캘린더
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/system-log" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-label="시스템 로그"
+          >
+            <MdSettings /> 시스템 로그
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/webcam" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-label="출석체크"
+          >
+            <MdPerson /> 출석체크
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/logout" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-label="로그아웃"
+          >
+            <MdLogout /> 로그아웃
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
