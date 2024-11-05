@@ -1,23 +1,11 @@
 /* 웹캠 컨테이너 스타일 */
 .webcam-container {
-  background-color: #ffffff;
-  padding: 20px; /* 패딩 증가 */
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 90%; /* 전체 화면 너비에 맞추기 */
-}
-
-/* 제목 스타일 */
-.webcam-container h3 {
-  margin-bottom: 15px; /* 여백 조정 */
-  color: #225ba4;
-  font-weight: 600;
-  font-size: 1.5em;
+  align-items: center; /* 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  height: 100vh; /* 전체 높이 사용 */
+  padding: 20px; /* 여백 추가 */
 }
 
 /* 웹캠 박스 스타일 */
@@ -25,10 +13,44 @@
   margin-top: 20px;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px; /* 웹캠 너비와 일치 */
+  height: auto;
+  position: relative; /* 자식 요소의 절대 위치를 위한 설정 */
+}
+
+/* 검은선 스타일 */
+.black-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid black; /* 검은 선 두께 조정 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 조정 */
+  pointer-events: none; /* 클릭 이벤트를 무시하게 설정 */
+  z-index: 1; /* 웹캠 위에 표시되도록 설정 */
+}
+
+/* 웹캠 스타일 */
+.webcam {
+  margin-top: 20px; /* 여백 추가 */
+  border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
   width: 100%;
-  max-width: 1280px; /* 웹캠 너비와 일치 */
+  max-width: 1280px; /* 최대 너비 설정 */
   height: auto;
+}
+
+/* 제목 스타일 */
+.webcam-title {
+  margin-bottom: 15px; /* 여백 조정 */
+  color: #225ba4;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center; /* 제목 중앙 정렬 */
 }
 
 /* 버튼 스타일 */

@@ -6,11 +6,10 @@ import '../styles/Webcam.css';
 const WebcamComponent = () => {
   const webcamRef = useRef(null);
   const [uploadStatus, setUploadStatus] = useState("");
-  
-  // Updated video constraints to 1280x720
+
   const videoConstraints = {
-    width: 1280,
-    height: 720,
+    width: 800,
+    height: 600,
     facingMode: "user"
   };
 
@@ -54,12 +53,13 @@ const WebcamComponent = () => {
       <div className="webcam-box">
         <Webcam 
           audio={false}
-          height={720}         // Updated height
-          width={1280}         // Updated width
+          height={600}
+          width={800}
           ref={webcamRef}
           videoConstraints={videoConstraints}
           screenshotFormat="image/jpeg"
         />
+        <div className="black-border" /> {/* 검은선 추가 */}
       </div>
 
       {/* Capture and Check Attendance Button */}
